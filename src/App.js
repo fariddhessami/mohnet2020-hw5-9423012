@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import FirstComponentFaridy from './components/FirstComponentFaridy';
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,8 @@ function App() {
         >
           Learn React
         </a>
+
+        <FirstComponentFaridy />
       </header>
     </div>
   );
