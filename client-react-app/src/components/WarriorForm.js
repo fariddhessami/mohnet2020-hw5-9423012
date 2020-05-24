@@ -57,9 +57,9 @@ export class WarriorForm extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.props.warriosArray.map((aWarrior) => (
+                {this.props.warriosArray.map((aWarrior, index) => (
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{aWarrior.f_name}</td>
                     <td>{aWarrior.l_name}</td>
                     <td>{aWarrior.dodId}</td>
