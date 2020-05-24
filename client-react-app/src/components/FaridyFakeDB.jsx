@@ -17,8 +17,11 @@ export class FaridyFakeDB extends Component {
       new ServiceMan('John', 'Adams', 12, 'Marines'),
     ],
   };
+  getData() {
+    return this.state.warriors;
+  }
   render() {
-    return <div></div>;
+    return <div>FaridyFakeDB here! </div>;
   }
 }
 
