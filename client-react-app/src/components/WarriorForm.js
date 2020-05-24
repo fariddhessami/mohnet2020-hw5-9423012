@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export class WarriorForm extends Component {
   render() {
-    console.log(this.props);
+    console.log(this.props.warriosArray);
     return (
       <div className="WarriorFormDiv">
         <h3>form of warriors</h3>
@@ -49,6 +49,7 @@ export class WarriorForm extends Component {
             <table className="table">
               <thead className="thead-dark">
                 <tr>
+                  <th>#</th>
                   <th>Fname</th>
                   <th>Lname</th>
                   <th>serviceId</th>
@@ -57,7 +58,17 @@ export class WarriorForm extends Component {
               </thead>
               <tbody>
                 {this.props.warriosArray.map((aWarrior) => (
-                  <tr>Fname</tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>{aWarrior.f_name}</td>
+                    <td>{aWarrior.l_name}</td>
+                    <td>{aWarrior.dodId}</td>
+                    <td>{aWarrior.branch}</td>
+                  </tr>
+
+                  // <td>Mark</td>
+                  // <tr></tr>
+
                   // <tr>{aWarrior.Fname}</tr>
                   // <tr>{aWarrior.Lname}</tr>
                   // <tr>{aWarrior.serviceId}</tr>
