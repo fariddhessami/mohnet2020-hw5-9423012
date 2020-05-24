@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FormDiscPanel from './FormDiscriptorsPanel';
 import WarriorFormPanel from './WarriorForm';
+import Todos from './Todos';
 
 class ServiceMan {
   constructor(f_name, l_name, dodId, branch) {
@@ -11,6 +12,14 @@ class ServiceMan {
   }
 }
 
+class todoThing {
+  constructor(id, title, isCompleted) {
+    this.id = id;
+    this.title = title;
+    this.isCompleted = isCompleted;
+  }
+}
+
 export class FaridyFakeDB extends Component {
   state = {
     warriors: [
@@ -18,7 +27,10 @@ export class FaridyFakeDB extends Component {
       new ServiceMan('Jack', 'NewMan', 1213, 'Marines'),
       new ServiceMan('John', 'Adams', 12, 'Marines'),
     ],
-    todos: [],
+    todos: [
+      new todoThing(1, 'fix mac', false),
+      new todoThing(2, 'post art in art station', false),
+    ],
   };
   getData() {
     return this.state.warriors;
@@ -30,6 +42,7 @@ export class FaridyFakeDB extends Component {
         FaridyFakeDB here!
         <FormDiscPanel />
         <WarriorFormPanel warriosArray={this.state.warriors} />
+        <Todos todosArray={this.state.todos} />
       </div>
     );
   }
