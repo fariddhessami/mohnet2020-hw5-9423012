@@ -4,6 +4,7 @@ import './App.css';
 
 import FormDiscPanel from './components/FormDiscriptorsPanel';
 import WarriorFormPanel from './components/WarriorForm';
+import FaridyFakeDB from './components/FaridyFakeDB';
 
 export class App2 extends Component {
   render() {
@@ -26,6 +27,7 @@ export class App2 extends Component {
 
         <FormDiscPanel />
         <WarriorFormPanel />
+        {console.log(FaridyFakeDB.state)}
       </div>
     );
   }
