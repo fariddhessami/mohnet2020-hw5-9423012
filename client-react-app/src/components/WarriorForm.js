@@ -37,20 +37,11 @@ function WarriorFormPanel() {
               placeholder="Example input"
             />
           </div>
-
-          {/* <div class="form-group">
-                <label for="faridy-form-1">first name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-            </div>
-            <div class="form-group">
-                <label for="faridy-form-2">last name</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-            </div>
-            <div class="form-group">
-                <label for="faridy-form-3">serverice id</label>
-                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Another input">
-            </div>
-            <div class="form-group">
+          <div className="form-group">
+            <label htmlFor="faridy-form-3">branch of service</label>
+            <select name="" id="" className="form-control"></select>
+          </div>
+          {/*<div class="form-group">
                 <label for="faridy-form-4">branch of service</label>
                 <select class="custom-select" id="formGroupExampleInput4">
                     <option selected>select branch of service</option>
@@ -60,6 +51,17 @@ function WarriorFormPanel() {
                     <option value="AirForce">United States Air Force</option>
                 </select>
             </div> */}
+
+          <table className="table">
+            <thead className="thead-dark">
+              <tr>
+                <th>Fname</th>
+                <th>Lname</th>
+                <th>serviceId</th>
+                <th>branch</th>
+              </tr>
+            </thead>
+          </table>
         </form>
       </div>
     </div> //it seems only one div should be wrapping whole, here
