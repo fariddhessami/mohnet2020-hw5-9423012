@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import FormDiscPanel from './components/FormDiscriptorsPanel';
-import WarriorFormPanel from './components/WarriorForm';
+// import FormDiscPanel from './components/FormDiscriptorsPanel';
+// import WarriorFormPanel from './components/WarriorForm';
 import FaridyFakeDB from './components/FaridyFakeDB';
 
 export class App extends Component {
   state = {
     warriors: [],
+    todos: [],
   };
   render() {
     return (
@@ -29,8 +30,8 @@ export class App extends Component {
         </header>
 
         <FaridyFakeDB />
-        <FormDiscPanel />
-        <WarriorFormPanel />
+        {/* <FormDiscPanel />
+        <WarriorFormPanel /> */}
         {/* {console.log('FaridyFakeDB.state:')}
         {console.log(FaridyFakeDB.getData())} */}
       </div>

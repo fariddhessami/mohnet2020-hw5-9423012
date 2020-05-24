@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FormDiscPanel from './FormDiscriptorsPanel';
+import WarriorFormPanel from './WarriorForm';
 
 class ServiceMan {
   constructor(f_name, l_name, dodId, branch) {
@@ -21,7 +23,14 @@ export class FaridyFakeDB extends Component {
     return this.state.warriors;
   }
   render() {
-    return <div>FaridyFakeDB here! </div>;
+    return (
+      <div>
+        {' '}
+        FaridyFakeDB here!
+        <FormDiscPanel />
+        <WarriorFormPanel />
+      </div>
+    );
   }
 }
 
