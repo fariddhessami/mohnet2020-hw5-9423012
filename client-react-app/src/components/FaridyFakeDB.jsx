@@ -18,6 +18,7 @@ export class FaridyFakeDB extends Component {
       new ServiceMan('Jack', 'NewMan', 1213, 'Marines'),
       new ServiceMan('John', 'Adams', 12, 'Marines'),
     ],
+    todos: [],
   };
   getData() {
     return this.state.warriors;
@@ -28,7 +29,7 @@ export class FaridyFakeDB extends Component {
         {' '}
         FaridyFakeDB here!
         <FormDiscPanel />
-        <WarriorFormPanel />
+        <WarriorFormPanel warriosArray={this.state.warriors} />
       </div>
     );
   }
