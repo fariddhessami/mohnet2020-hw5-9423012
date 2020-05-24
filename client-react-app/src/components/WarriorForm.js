@@ -1,27 +1,68 @@
 import React from 'react';
-// import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 
 function WarriorFormPanel() {
   return (
     <div className="WarriorFormDiv">
-      <h3>form discriptors</h3>
-    </div>
+      <h3>form of warriors</h3>
 
-    // <Container>
-    //     alo alo
-    // </Container>
+      <div className="container">
+        <form>
+          <div className="form-gruop">
+            <label htmlFor="faridy-form-1">first name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="formInput1"
+              placeholder="Example input"
+            />
+          </div>
+          <div className="form-gruop">
+            <label htmlFor="faridy-form-2">last name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="formInput2"
+              placeholder="Example input"
+            />
+          </div>
+          <div className="form-gruop">
+            <label htmlFor="faridy-form-3">serverice id</label>
+            <input
+              type="text"
+              className="form-control"
+              id="formInput3"
+              placeholder="Example input"
+            />
+          </div>
 
-    // <Container className="p-3">
-    // <Jumbotron>
-    // <h1 className="header">Welcome To React-Bootstrap</h1>
-    // <ExampleToast>
-    //     We now have Toasts
-    //     <span role="img" aria-label="tada">
-    //     🎉
-    //     </span>
-    // </ExampleToast>
-    // </Jumbotron>
-    // </Container>
+          {/* <div class="form-group">
+                <label for="faridy-form-1">first name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group">
+                <label for="faridy-form-2">last name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+            </div>
+            <div class="form-group">
+                <label for="faridy-form-3">serverice id</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Another input">
+            </div>
+            <div class="form-group">
+                <label for="faridy-form-4">branch of service</label>
+                <select class="custom-select" id="formGroupExampleInput4">
+                    <option selected>select branch of service</option>
+                    <option value="Army">United States Army</option>
+                    <option value="Navy">United States Navy</option>
+                    <option value="Marines">United States Marine Corps.</option>
+                    <option value="AirForce">United States Air Force</option>
+                </select>
+            </div> */}
+        </form>
+      </div>
+    </div> //it seems only one div should be wrapping whole, here
   );
 }
 
