@@ -11,7 +11,7 @@ export default class FetcherComponent extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://api.example.com/items')
+    fetch('https://api.github.com/search/repositories?q=Covid19')
       .then((res) => res.json())
       .then(
         (result) => {
@@ -43,7 +43,7 @@ export default class FetcherComponent extends React.Component {
         <ul>
           {items.map((item) => (
             <li key={item.name}>
-              {item.name} {item.price}
+              {item.name} alo <a href={item.url}>item.url</a>
             </li>
           ))}
         </ul>

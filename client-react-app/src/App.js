@@ -6,6 +6,8 @@ import './App.css';
 // import WarriorFormPanel from './components/WarriorForm';
 import FaridyFakeDB from './components/FaridyFakeDB';
 
+import FetcherComponent from './components/FetcherComponent';
+
 export class App extends Component {
   state = {
     warriors: [],
@@ -30,10 +32,7 @@ export class App extends Component {
         </header>
 
         <FaridyFakeDB />
-        {/* <FormDiscPanel />
-        <WarriorFormPanel /> */}
-        {/* {console.log('FaridyFakeDB.state:')}
-        {console.log(FaridyFakeDB.getData())} */}
+        <FetcherComponent />
       </div>
     );
   }
