@@ -14,6 +14,7 @@ export class App extends Component {
     warriors: [],
     todos: [],
   };
+
   render() {
     return (
       <div className="App">
@@ -21,9 +22,9 @@ export class App extends Component {
           <script src="https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places"></script>
         </head> */}
 
-        <Helmet>
+        {/* <Helmet>
           <script src="https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places"></script>
-        </Helmet>
+        </Helmet> */}
         <header className="App-header">
           <p>
             this is <code>src/App2.js</code> buddy!
