@@ -88,7 +88,7 @@ export default class FormsPanel extends React.Component {
           <div className="container">
             <p>hello this is forms BTW</p>
 
-            <LocationPickerFaridy2 />
+            {/* <LocationPickerFaridy2 /> */}
 
             {items.map((item) => (
               <div className="form-group">
