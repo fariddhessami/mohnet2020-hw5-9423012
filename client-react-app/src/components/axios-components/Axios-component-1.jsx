@@ -13,26 +13,23 @@ export default class AxiosComponent1 extends React.Component {
 
   componentDidMount() {
     // fetch('https://api.github.com/search/repositories?q=Covid19')
-    Axios.get('https://api.github.com/search/repositories?q=Covid19')
-      //   .then((res) => res.json())
-      .then(
-        (result) => {
-          //   this.setState({
-          //     isLoaded: true,
-          //     items: result.items,
-          //   });
-          console.log(result);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
-      );
+    Axios.get('https://api.github.com/search/repositories?q=Covid19').then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          items: result.data.items,
+        });
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error,
+        });
+      }
+    );
   }
 
   render() {
