@@ -19,6 +19,10 @@ export default class AxiosComponent1 extends React.Component {
           isLoaded: true,
           items: result.data.items,
         });
+        console.log('this is AXios:');
+        console.log(result);
+        console.log(result.data);
+        console.log(this.items);
       },
       // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow
@@ -34,6 +38,8 @@ export default class AxiosComponent1 extends React.Component {
 
   render() {
     const { error, isLoaded, items } = this.state;
+    console.log('axios in render : items : ');
+    console.log(items);
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {

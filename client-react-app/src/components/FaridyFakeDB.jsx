@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FormDiscPanel from './FormDiscriptorsPanel';
+
 import WarriorFormPanel from './WarriorForm';
 import Todos from './Todos';
 
@@ -40,7 +40,6 @@ export class FaridyFakeDB extends Component {
       <div>
         {' '}
         FaridyFakeDB here!
-        <FormDiscPanel />
         <WarriorFormPanel warriosArray={this.state.warriors} />
         <Todos todosArray={this.state.todos} />
       </div>

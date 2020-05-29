@@ -30,8 +30,8 @@ export class App extends Component {
           </a>
         </header>
         <FaridyFakeDB />
-        <FetcherComponent />
-        <AxiosComponent1 />
+        {/* <FetcherComponent />
+        <AxiosComponent1 /> */}
         {/* ehem
         <MiniDrawerFaridy1 /> */}
         <FormsPanel />
