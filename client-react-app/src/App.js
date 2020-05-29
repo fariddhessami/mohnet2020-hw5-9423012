@@ -6,6 +6,8 @@ import AxiosComponent1 from './components/axios-components/Axios-component-1';
 
 import MiniDrawerFaridy1 from './components/MiniDrawerFaridy1';
 
+import FormsPanel from './components/FormsPanel';
+
 export class App extends Component {
   state = {
     warriors: [],
@@ -32,6 +34,7 @@ export class App extends Component {
         <AxiosComponent1 />
         {/* ehem
         <MiniDrawerFaridy1 /> */}
+        <FormsPanel />
       </div>
     );
   }
