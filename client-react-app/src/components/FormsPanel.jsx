@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 
+import DatePickerFaridy from './DatePickerFaridy';
+
 export default class FormsPanel extends React.Component {
   constructor(props) {
     super(props);
@@ -38,12 +40,22 @@ export default class FormsPanel extends React.Component {
     );
   }
 
-  fieldTypeSwitch(fieldType) {
+  fieldTypeSwitch(field) {
     var renderOutPut = <div>alohoiii1</div>;
 
-    switch (fieldType) {
+    switch (field.type) {
       case 'Text':
-        renderOutPut = <div>alohohohohohohoho3</div>;
+        renderOutPut = (
+          <div>
+            {' '}
+            <input
+              type="text"
+              className="form-control"
+              id="formInput1"
+              placeholder="Example input"
+            />
+          </div>
+        );
         break;
 
       default:
@@ -67,6 +79,9 @@ export default class FormsPanel extends React.Component {
         <div>
           <div className="container">
             <p>hello this is forms BTW</p>
+
+            <DatePickerFaridy />
+
             {items.map((item) => (
               <div className="form-group">
                 <form>
@@ -75,7 +90,7 @@ export default class FormsPanel extends React.Component {
                 {item.fields.map((field) => (
                   <div className="form-group">
                     <label htmlFor={field.name}>{field.title}</label>
-                    {fieldTypeSwitch(field.type)}
+                    {fieldTypeSwitch(field)}
                     {/* {switch(field.type) {
                         case "Text":
                             

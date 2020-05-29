@@ -50,10 +50,10 @@
                 "required": true
             },
             {
-                "name": "Loc",
-                "title": "Your Location",
-                "type": "Location",
-                "required": false
+                "name": "Doa",
+                "title": "Date of birth",
+                "type": "Date",
+                "required": true
             }
         ]
     }
