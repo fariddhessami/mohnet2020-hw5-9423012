@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// import FormDiscPanel from './components/FormDiscriptorsPanel';
-// import WarriorFormPanel from './components/WarriorForm';
 import FaridyFakeDB from './components/FaridyFakeDB';
 
 import FetcherComponent from './components/FetcherComponent';
 import AxiosComponent1 from './components/axios-components/Axios-component-1';
+
+import MiniDrawerFaridy1 from './components/MiniDrawerFaridy1';
 
 export class App extends Component {
   state = {
@@ -30,10 +27,11 @@ export class App extends Component {
             Learn React
           </a>
         </header>
-
         <FaridyFakeDB />
         <FetcherComponent />
         <AxiosComponent1 />
+        {/* ehem
+        <MiniDrawerFaridy1 /> */}
       </div>
     );
   }
