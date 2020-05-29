@@ -57,7 +57,13 @@ export default class FormsPanel extends React.Component {
           </div>
         );
         break;
-
+      case 'Date':
+        renderOutPut = (
+          <div>
+            <DatePickerFaridy />
+          </div>
+        );
+        break;
       default:
         break;
     }
@@ -79,8 +85,6 @@ export default class FormsPanel extends React.Component {
         <div>
           <div className="container">
             <p>hello this is forms BTW</p>
-
-            <DatePickerFaridy />
 
             {items.map((item) => (
               <div className="form-group">
