@@ -43,7 +43,7 @@ export default class FetcherComponent extends React.Component {
         <ul>
           {items.map((item) => (
             <li key={item.name}>
-              {item.name} alo <a href={item.url}>item.url</a>
+              {item.name} alo <a href={item.url}>{item.url}</a>
             </li>
           ))}
         </ul>
