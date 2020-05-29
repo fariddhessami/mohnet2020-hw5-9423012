@@ -18,7 +18,6 @@ export class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <p>
             this is <code>src/App2.js</code> buddy!
           </p>
