@@ -16,6 +16,9 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* <head>
+          <script src="https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places"></script>
+        </head> */}
         <header className="App-header">
           <p>
             this is <code>src/App2.js</code> buddy!

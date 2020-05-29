@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // components takes precedence over default styles.
 
 import DatePickerFaridy from './DatePickerFaridy';
+import LocationPickerFaridy from './LocationPickerFaridy';
 
 export default class FormsPanel extends React.Component {
   constructor(props) {
@@ -85,6 +86,8 @@ export default class FormsPanel extends React.Component {
         <div>
           <div className="container">
             <p>hello this is forms BTW</p>
+
+            {/* <LocationPickerFaridy /> */}
 
             {items.map((item) => (
               <div className="form-group">
