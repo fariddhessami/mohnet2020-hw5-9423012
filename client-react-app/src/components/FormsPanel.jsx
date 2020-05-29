@@ -39,7 +39,18 @@ export default class FormsPanel extends React.Component {
   }
 
   fieldTypeSwitch(fieldType) {
-    return <div>aloi1</div>;
+    var renderOutPut = <div>alohoiii1</div>;
+
+    switch (fieldType) {
+      case 'Text':
+        renderOutPut = <div>alohohohohohohoho3</div>;
+        break;
+
+      default:
+        break;
+    }
+
+    return renderOutPut;
   }
 
   render() {
@@ -56,10 +67,11 @@ export default class FormsPanel extends React.Component {
         <div>
           <div className="container">
             <p>hello this is forms BTW</p>
-            <form>alo</form>
             {items.map((item) => (
               <div className="form-group">
-                <form>{item.title}</form>
+                <form>
+                  <h3>{item.title}</h3>
+                </form>
                 {item.fields.map((field) => (
                   <div className="form-group">
                     <label htmlFor={field.name}>{field.title}</label>
