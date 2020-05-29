@@ -34,7 +34,6 @@ export default class LocationPickerFaridy extends Component {
       <div>
         <h1>{this.state.address}</h1>
         <div>
-          {/* <script src="https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places"></script> */}
           <LocationPicker
             containerElement={<div style={{ height: '100%' }} />}
             mapElement={<div style={{ height: '400px' }} />}

@@ -5,8 +5,9 @@ import FetcherComponent from './components/FetcherComponent';
 import AxiosComponent1 from './components/axios-components/Axios-component-1';
 
 import MiniDrawerFaridy1 from './components/MiniDrawerFaridy1';
-
 import FormsPanel from './components/FormsPanel';
+
+import { Helmet } from 'react-helmet';
 
 export class App extends Component {
   state = {
@@ -19,6 +20,10 @@ export class App extends Component {
         {/* <head>
           <script src="https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places"></script>
         </head> */}
+
+        <Helmet>
+          <script src="https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places"></script>
+        </Helmet>
         <header className="App-header">
           <p>
             this is <code>src/App2.js</code> buddy!
