@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
@@ -13,6 +13,29 @@ export class FormsPanel extends Component {
       items: [],
     };
   }
+
+  componentDidMount() {
+    // fetch('https://api.github.com/search/repositories?q=Covid19')
+    Axios.get('api/forms-test').then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          items: result.data.items,
+        });
+        console.log(result);
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error,
+        });
+      }
+    );
+  }
+
   render() {
     console.log(this.props.warriosArray);
     return (
