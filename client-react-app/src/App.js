@@ -7,6 +7,7 @@ import './App.css';
 import FaridyFakeDB from './components/FaridyFakeDB';
 
 import FetcherComponent from './components/FetcherComponent';
+import AxiosComponent1 from './components/axios-components/Axios-component-1';
 
 export class App extends Component {
   state = {
@@ -33,6 +34,7 @@ export class App extends Component {
 
         <FaridyFakeDB />
         <FetcherComponent />
+        <AxiosComponent1 />
       </div>
     );
   }
