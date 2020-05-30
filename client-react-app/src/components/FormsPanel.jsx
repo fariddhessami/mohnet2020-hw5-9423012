@@ -10,6 +10,8 @@ import LocationPickerFaridy2 from './LocationPickerFaridy2';
 
 import ThisInReact1 from './training-components/ThisInReact1';
 
+const ftw2020 = 12;
+
 export default class FormsPanel extends React.Component {
   constructor(props) {
     super(props);
@@ -108,8 +110,6 @@ export default class FormsPanel extends React.Component {
   }
 
   drawFormBody(form, fts) {
-    // const fieldTypeSwitch = this.fieldTypeSwitch;
-
     console.log('this is this.drawFormBody');
     console.log('form to draw : ', form);
     console.log('and this : ', this);
@@ -129,27 +129,12 @@ export default class FormsPanel extends React.Component {
           ))}
           <input type="submit" value="Submit" />
         </div>
-        // {item.fields.map((field) => (
-        //   <div className="form-group">
-        //     <label htmlFor={field.name}>{field.title}</label>
-        //     {fieldTypeSwitch(field)}
-        //     {/* {switch(field.type) {
-        //       case "Text":
-
-        //           break;
-
-        //       default:
-        //           break;
-        //   }} */}
-        //   </div>
-        // ))}
       );
     }
   }
 
   render() {
     console.log('this is render() : ', this);
-    // console.log('this is this.drawFormBody : ', this.drawFormBody);
     const drawFormBody = this.drawFormBody;
     const fieldTypeSwitch = this.fieldTypeSwitch;
     const { error, isLoaded, items } = this.state;
