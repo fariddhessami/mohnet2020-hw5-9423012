@@ -10,8 +10,6 @@ import LocationPickerFaridy2 from './LocationPickerFaridy2';
 
 import ThisInReact1 from './training-components/ThisInReact1';
 
-const ftw2020 = 12;
-
 export default class FormsPanel extends React.Component {
   constructor(props) {
     super(props);
