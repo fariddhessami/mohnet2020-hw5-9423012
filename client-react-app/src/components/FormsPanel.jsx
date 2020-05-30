@@ -109,38 +109,37 @@ export default class FormsPanel extends React.Component {
   fieldTypeSwitch(formId, field) {
     var renderOutPut = <div>alohoiii1</div>;
 
+    if (typeof field.options != 'undefined') {
+      renderOutPut = (
+        <div>
+          <select className="form-control">
+            {field.options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
+        </div>
+      );
+    } else {
+      //switch-case
+    }
+
     switch (field.type) {
       case 'Text':
         {
-          if (typeof field.options != 'undefined') {
-            renderOutPut = (
-              <div>
-                <select>
-                  <option value="grapefruit">Grapefruit</option>
-                  <option value="lime">Lime</option>
-                  <option selected value="coconut">
-                    Coconut
-                  </option>
-                  <option value="mango">Mango</option>
-                </select>
-              </div>
-            );
-          } else {
-            renderOutPut = (
-              <div>
-                {' '}
-                <input
-                  type="text"
-                  className="form-control"
-                  id={field.name}
-                  placeholder="Example input"
-                  onChange={(e) =>
-                    this.handleChange(formId, field.name, e.target.value)
-                  }
-                />
-              </div>
-            );
-          }
+          renderOutPut = (
+            <div>
+              {' '}
+              <input
+                type="text"
+                className="form-control"
+                id={field.name}
+                placeholder="Example input"
+                onChange={(e) =>
+                  this.handleChange(formId, field.name, e.target.value)
+                }
+              />
+            </div>
+          );
         }
         // renderOutPut = (
         //   <div>
@@ -181,11 +180,10 @@ export default class FormsPanel extends React.Component {
     console.log('and this : ', this);
 
     if (!form.isVisiable) {
-      return <div>alou11111</div>;
+      return <div>click on form title to open it</div>;
     } else {
       return (
         <div>
-          alou77777
           {form.fields.map((field) => (
             <div className="form-group">
               <label htmlFor={field.name}>{field.title}</label>
@@ -236,7 +234,6 @@ export default class FormsPanel extends React.Component {
                   {/* {() => console.log('hello there!')}
                   {() => this.drawFormBody(item)} */}
                   {/* {drawFormBody(item)} */}
-                  123456
                   {this.drawFormBody(item, fieldTypeSwitch)}
                   {/* {this.drawFormBody(item)} */}
                   {/* {drawFormBody(item)} */}
