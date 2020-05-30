@@ -87,6 +87,23 @@ export default class FormsPanel extends React.Component {
       fieldName,
       value
     );
+    var state3 = this.state;
+    console.log(state3);
+    var ourForm;
+    state3.forms.map((form) => {
+      console.log('form.id', form.id);
+      if (form.id === formId) {
+        ourForm = form;
+        form.fields.map((field) => {
+          if (field.name === fieldName) {
+            field.value = value;
+          }
+        });
+      }
+    });
+    console.log(ourForm);
+    this.setState(state3);
+    console.log('this is new state :', state3);
   }
 
   fieldTypeSwitch(formId, field) {
@@ -112,7 +129,11 @@ export default class FormsPanel extends React.Component {
       case 'Date':
         renderOutPut = (
           <div>
-            <DatePickerFaridy id={field.name} />
+            <DatePickerFaridy
+              id={field.name}
+              handeChFunc={this.handleChange}
+              formId={formId}
+            />
           </div>
         );
         break;

@@ -7,6 +7,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export default class DatePickerFaridy extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
   state = {
     startDate: new Date(),
   };
@@ -15,6 +19,9 @@ export default class DatePickerFaridy extends React.Component {
     this.setState({
       startDate: date,
     });
+    console.log('hello there!');
+    this.props.handeChFunc(this.props.formId, this.props.id, date);
+    // (formId, fieldName, value)
   };
 
   render() {
@@ -25,6 +32,7 @@ export default class DatePickerFaridy extends React.Component {
         id={this.props.id}
         selected={this.state.startDate}
         onChange={this.handleChange}
+        // onChange={this.props.handeChFunc}
       />
     );
   }
