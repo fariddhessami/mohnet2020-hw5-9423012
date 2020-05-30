@@ -18,6 +18,8 @@ export default class FormsPanel extends React.Component {
       isLoaded: false,
       items: [],
     };
+    this.handleClick = this.handleClick.bind(this);
+    this.toggleFormVis = this.toggleFormVis.bind(this);
   }
 
   componentDidMount() {
@@ -50,8 +52,18 @@ export default class FormsPanel extends React.Component {
     );
   }
 
-  handleClick() {
+  handleClick(selectedID) {
     console.log('click occured!!!!');
+    console.log('this.state.forms', this.state.forms);
+    console.log(selectedID);
+    this.setState();
+  }
+
+  toggleFormVis(selectedID) {
+    console.log('click occured!!!!');
+    console.log('this.state.forms', this.state.forms);
+    console.log(selectedID);
+    this.setState();
   }
 
   fieldTypeSwitch(field) {
@@ -107,7 +119,11 @@ export default class FormsPanel extends React.Component {
             {items.map((item) => (
               <div className="form-group">
                 <form id={item.id}>
-                  <h3 onClick={this.handleClick}>{item.title}</h3>
+                  <h3 onClick={() => this.handleClick(item.id)}>
+                    {item.title}
+                  </h3>
+                  {/* <h3 onClick={() => this.handleClick(id)}>{item.title}</h3> */}
+
                   {/* </form> */}
                   {item.fields.map((field) => (
                     <div className="form-group">
