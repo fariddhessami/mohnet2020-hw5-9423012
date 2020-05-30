@@ -150,7 +150,7 @@ export default class FormsPanel extends React.Component {
             <p>hello this is forms BTW</p>
 
             {/* <LocationPickerFaridy2 /> */}
-            <LocationPickerFaridy3 />
+            {/* <LocationPickerFaridy3 /> */}
 
             <ThisInReact1 />
 

@@ -11,7 +11,7 @@ const defaultPosition = {
   lng: 86.925,
 };
 
-export default class LocationPickerFaridy3 extends Component {
+export default class LocationPickerFaridy4 extends Component {
   constructor(props) {
     super(props);
 
@@ -37,35 +37,30 @@ export default class LocationPickerFaridy3 extends Component {
     Axios.defaults.headers.get['Access-Control-Allow-Origin'] = 'origin-list';
     var getReqConf = [];
     // Axios.get(URL2, { headers: 12 })
-    Axios.get(URL2)
-      // Axios.get(URL2, {
-      //   headers: { 'Access-Control-Allow-Origin': 'origin-list' },
-      // })
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-          });
-          console.log('what we got from google: ');
-          console.log(result);
-        },
-        // axios.post(url, {
-        //     headers: {
-        //       'Authorization': `Basic ${token}`
-        //     }
-        //   })
+    fetch(URL2).then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+        });
+        console.log('what we got from google: ');
+        console.log(result);
+      },
+      // axios.post(url, {
+      //     headers: {
+      //       'Authorization': `Basic ${token}`
+      //     }
+      //   })
 
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          });
-        }
-      );
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error,
+        });
+      }
+    );
   }
 
   handleLocationChange({ position, address, places }) {

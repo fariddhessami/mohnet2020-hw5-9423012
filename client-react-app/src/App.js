@@ -9,6 +9,8 @@ import FormsPanel from './components/FormsPanel';
 
 import { Helmet } from 'react-helmet';
 
+import './css/Faridy.css';
+
 export class App extends Component {
   state = {
     warriors: [],
