@@ -57,13 +57,16 @@ export default class FormsPanel extends React.Component {
     console.log('this.state.forms', this.state.forms);
     console.log(selectedID);
     this.setState();
+    var state2 = this.state;
+    state2.forms.map((form) => (form.isVisiable = true));
+    console.log('state2', state2);
   }
 
   toggleFormVis(selectedID) {
     console.log('click occured!!!!');
     console.log('this.state.forms', this.state.forms);
     console.log(selectedID);
-    this.setState();
+    // this.setState(prevState =>(return {}));
   }
 
   fieldTypeSwitch(field) {
