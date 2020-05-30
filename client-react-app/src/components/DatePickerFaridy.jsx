@@ -20,8 +20,20 @@ export default class DatePickerFaridy extends React.Component {
       startDate: date,
     });
     console.log('hello there!');
-    this.props.handeChFunc(this.props.formId, this.props.id, date);
+    this.props.handeChFunc(
+      this.props.formId,
+      this.props.id,
+      date.toISOString().substring(0, 10)
+    );
+    console.log('heres date : ', date);
+    console.log('heres date : ', date.toString());
+    console.log('heres date : ', date.getDate());
+    console.log('heres date : ', date.toISOString().substring(0, 10));
+
+    // var resultDate = '';
+    // resultDate = resultDate + date.get;
     // (formId, fieldName, value)
+    // YYYY-MM-DD
   };
 
   render() {
@@ -35,5 +47,30 @@ export default class DatePickerFaridy extends React.Component {
         // onChange={this.props.handeChFunc}
       />
     );
+    // const [startDate, setStartDate] = useState(new Date());
+    // return (
+    //   <DatePicker
+    //     selected={startDate}
+    //     onChange={(date) => setStartDate(date)}
+    //     peekNextMonth
+    //     showMonthDropdown
+    //     showYearDropdown
+    //     dropdownMode="select"
+    //   />
+    // );
   }
 }
+
+// () => {
+//   const [startDate, setStartDate] = useState(new Date());
+//   return (
+//     <DatePicker
+//       selected={startDate}
+//       onChange={(date) => setStartDate(date)}
+//       peekNextMonth
+//       showMonthDropdown
+//       showYearDropdown
+//       dropdownMode="select"
+//     />
+//   );
+// };

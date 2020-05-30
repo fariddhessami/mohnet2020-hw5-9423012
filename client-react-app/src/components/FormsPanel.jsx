@@ -111,20 +111,51 @@ export default class FormsPanel extends React.Component {
 
     switch (field.type) {
       case 'Text':
-        renderOutPut = (
-          <div>
-            {' '}
-            <input
-              type="text"
-              className="form-control"
-              id={field.name}
-              placeholder="Example input"
-              onChange={(e) =>
-                this.handleChange(formId, field.name, e.target.value)
-              }
-            />
-          </div>
-        );
+        {
+          if (typeof field.options != 'undefined') {
+            renderOutPut = (
+              <div>
+                <select>
+                  <option value="grapefruit">Grapefruit</option>
+                  <option value="lime">Lime</option>
+                  <option selected value="coconut">
+                    Coconut
+                  </option>
+                  <option value="mango">Mango</option>
+                </select>
+              </div>
+            );
+          } else {
+            renderOutPut = (
+              <div>
+                {' '}
+                <input
+                  type="text"
+                  className="form-control"
+                  id={field.name}
+                  placeholder="Example input"
+                  onChange={(e) =>
+                    this.handleChange(formId, field.name, e.target.value)
+                  }
+                />
+              </div>
+            );
+          }
+        }
+        // renderOutPut = (
+        //   <div>
+        //     {' '}
+        //     <input
+        //       type="text"
+        //       className="form-control"
+        //       id={field.name}
+        //       placeholder="Example input"
+        //       onChange={(e) =>
+        //         this.handleChange(formId, field.name, e.target.value)
+        //       }
+        //     />
+        //   </div>
+        // );
         break;
       case 'Date':
         renderOutPut = (
