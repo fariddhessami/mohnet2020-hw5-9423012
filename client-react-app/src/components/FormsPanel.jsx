@@ -20,6 +20,7 @@ export default class FormsPanel extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.toggleFormVis = this.toggleFormVis.bind(this);
+    // this.drawFormBody = this.drawFormBody(this);
   }
 
   componentDidMount() {
@@ -106,7 +107,18 @@ export default class FormsPanel extends React.Component {
     return renderOutPut;
   }
 
+  drawFormBody(form) {
+    console.log('form to draw : ', form);
+
+    if (form.isVisiable) {
+      return <div>alou11111</div>;
+    } else {
+      return <div>alou77777</div>;
+    }
+  }
+
   render() {
+    const drawFormBody = this.drawFormBody;
     const fieldTypeSwitch = this.fieldTypeSwitch;
     const { error, isLoaded, items } = this.state;
     console.log('formsP in render : items : ');
@@ -132,8 +144,14 @@ export default class FormsPanel extends React.Component {
                     {item.title}
                   </h3>
                   {/* <h3 onClick={() => this.handleClick(id)}>{item.title}</h3> */}
-
                   {/* </form> */}
+                  {/* 
+                  {if(form.isVisiable){
+                   return <div></div> 
+                  }} */}
+
+                  {drawFormBody(item)}
+
                   {item.fields.map((field) => (
                     <div className="form-group">
                       <label htmlFor={field.name}>{field.title}</label>
@@ -156,76 +174,5 @@ export default class FormsPanel extends React.Component {
         </div>
       );
     }
-
-    // if (error) {
-    //   return <div>Error: {error.message}</div>;
-    // } else if (!isLoaded) {
-    //   return <div>Loading...</div>;
-    // } else {
-    //   return (
-    //     <ul>
-    //       {items.map((item) => (
-    //         <li key={item.name}>
-    //           {item.name} alo <a href={item.url}>{item.url}</a>
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   );
-    // }
   }
 }
-
-// return (
-//   <div className="clientFormsDiv">
-//     <h3>forms for clients to see</h3>
-
-//     <div className="container">
-//       {/* {items.map((item) => (
-//         <p>alo</p>
-//       ))} */}
-
-//       <ul>
-//         {items.map((item) => (
-//           <li key={item.name}>
-//             {item.name} alo <a href={item.url}>{item.url}</a>
-//           </li>
-//         ))}
-//       </ul>
-
-//       <form>
-//         <div className="form-gruop">
-//           <label htmlFor="faridy-form-1">first name</label>
-//           <input
-//             type="text"
-//             className="form-control"
-//             id="formInput1"
-//             placeholder="Example input"
-//           />
-//         </div>
-//         <div className="form-gruop">
-//           <label htmlFor="faridy-form-2">last name</label>
-//           <input
-//             type="text"
-//             className="form-control"
-//             id="formInput2"
-//             placeholder="Example input"
-//           />
-//         </div>
-//         <div className="form-gruop">
-//           <label htmlFor="faridy-form-3">serverice id</label>
-//           <input
-//             type="text"
-//             className="form-control"
-//             id="formInput3"
-//             placeholder="Example input"
-//           />
-//         </div>
-//         <div className="form-group">
-//           <label htmlFor="faridy-form-3">branch of service</label>
-//           <select name="" id="" className="form-control"></select>
-//         </div>
-//         {/* {this.props.map} */}
-//       </form>
-//     </div>
-//   </div>
-// );
