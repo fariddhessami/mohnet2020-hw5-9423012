@@ -109,10 +109,17 @@ export default class FormsPanel extends React.Component {
   fieldTypeSwitch(formId, field) {
     var renderOutPut = <div>alohoiii1</div>;
 
+    console.log('field to check :', field, field.options);
+
     if (typeof field.options != 'undefined') {
       renderOutPut = (
         <div>
-          <select className="form-control">
+          <select
+            className="custom-select"
+            onChange={(e) =>
+              this.handleChange(formId, field.name, e.target.value)
+            }
+          >
             {field.options.map((option) => (
               <option value={option.value}>{option.label}</option>
             ))}
@@ -120,55 +127,53 @@ export default class FormsPanel extends React.Component {
         </div>
       );
     } else {
-      //switch-case
-    }
-
-    switch (field.type) {
-      case 'Text':
-        {
+      switch (field.type) {
+        case 'Text':
+          {
+            renderOutPut = (
+              <div>
+                {' '}
+                <input
+                  type="text"
+                  className="form-control"
+                  id={field.name}
+                  placeholder="Example input"
+                  onChange={(e) =>
+                    this.handleChange(formId, field.name, e.target.value)
+                  }
+                />
+              </div>
+            );
+          }
+          // renderOutPut = (
+          //   <div>
+          //     {' '}
+          //     <input
+          //       type="text"
+          //       className="form-control"
+          //       id={field.name}
+          //       placeholder="Example input"
+          //       onChange={(e) =>
+          //         this.handleChange(formId, field.name, e.target.value)
+          //       }
+          //     />
+          //   </div>
+          // );
+          break;
+        case 'Date':
           renderOutPut = (
             <div>
-              {' '}
-              <input
-                type="text"
-                className="form-control"
+              <DatePickerFaridy
                 id={field.name}
-                placeholder="Example input"
-                onChange={(e) =>
-                  this.handleChange(formId, field.name, e.target.value)
-                }
+                handeChFunc={this.handleChange}
+                formId={formId}
               />
             </div>
           );
-        }
-        // renderOutPut = (
-        //   <div>
-        //     {' '}
-        //     <input
-        //       type="text"
-        //       className="form-control"
-        //       id={field.name}
-        //       placeholder="Example input"
-        //       onChange={(e) =>
-        //         this.handleChange(formId, field.name, e.target.value)
-        //       }
-        //     />
-        //   </div>
-        // );
-        break;
-      case 'Date':
-        renderOutPut = (
-          <div>
-            <DatePickerFaridy
-              id={field.name}
-              handeChFunc={this.handleChange}
-              formId={formId}
-            />
-          </div>
-        );
-        break;
-      default:
-        break;
+          break;
+        default:
+          break;
+      }
     }
 
     return renderOutPut;

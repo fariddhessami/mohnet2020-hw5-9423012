@@ -35,7 +35,7 @@
         ]
     },
     {
-        "title": "A registeration form",
+        "title": "A Military Registeration form",
         "id": "1235",
         "fields": [{
                 "name": "First_Name",
@@ -54,6 +54,19 @@
                 "title": "Date of birth",
                 "type": "Date",
                 "required": true
+            },
+            {
+                "name": "Service_Branch",
+                "title": "Branch of Service",
+                "type": "Text",
+                "required": true,
+                "options": [
+                    { "label": "Army", "value": "US_Army" },
+                    { "label": "Marine Corps.", "value": "USMC" },
+                    { "label": "Air Force", "value": "USAF" },
+                    { "label": "Navy", "value": "US_Navy" },
+                    { "label": "Coast Guard", "value": "USCG" }
+                ]
             }
         ]
     },
