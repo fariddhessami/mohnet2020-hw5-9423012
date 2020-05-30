@@ -22,6 +22,7 @@ export default class DatePickerFaridy extends React.Component {
       <DatePicker
         // style="display:block;" //thought it would make width ok but didn't
         className="form-control"
+        id={this.props.id}
         selected={this.state.startDate}
         onChange={this.handleChange}
       />

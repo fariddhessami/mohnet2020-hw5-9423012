@@ -55,7 +55,7 @@ export default class FormsPanel extends React.Component {
             <input
               type="text"
               className="form-control"
-              id="formInput1"
+              id={field.name}
               placeholder="Example input"
             />
           </div>
@@ -64,7 +64,7 @@ export default class FormsPanel extends React.Component {
       case 'Date':
         renderOutPut = (
           <div>
-            <DatePickerFaridy />
+            <DatePickerFaridy id={field.name} />
           </div>
         );
         break;
