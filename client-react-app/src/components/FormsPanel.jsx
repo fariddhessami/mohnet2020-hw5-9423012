@@ -26,11 +26,17 @@ export default class FormsPanel extends React.Component {
         this.setState({
           isLoaded: true,
           items: result.data,
+          forms: result.data,
         });
         console.log('formsP : result : ');
         console.log(result);
         console.log(result.data);
-        console.log(this.items);
+        console.log('this.state.items', this.state.items);
+        this.state.forms.forEach((form) => {
+          form.isVisiable = false;
+        });
+        this.setState();
+        console.log('this.state.forms', this.state.forms);
       },
       // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow
@@ -42,6 +48,10 @@ export default class FormsPanel extends React.Component {
         });
       }
     );
+  }
+
+  handleClick() {
+    console.log('click occured!!!!');
   }
 
   fieldTypeSwitch(field) {
@@ -97,7 +107,7 @@ export default class FormsPanel extends React.Component {
             {items.map((item) => (
               <div className="form-group">
                 <form id={item.id}>
-                  <h3>{item.title}</h3>
+                  <h3 onClick={this.handleClick}>{item.title}</h3>
                   {/* </form> */}
                   {item.fields.map((field) => (
                     <div className="form-group">
