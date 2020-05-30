@@ -22,6 +22,8 @@ export default class FormsPanel extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.toggleFormVis = this.toggleFormVis.bind(this);
     // this.drawFormBody = this.drawFormBody(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.fieldTypeSwitch = this.fieldTypeSwitch.bind(this);
   }
 
   componentDidMount() {
@@ -77,6 +79,16 @@ export default class FormsPanel extends React.Component {
     // this.setState(prevState =>(return {}));
   }
 
+  handleChange(formId, fieldName, value) {
+    console.log(
+      'handleChange',
+      'formId, fieldName, value',
+      formId,
+      fieldName,
+      value
+    );
+  }
+
   fieldTypeSwitch(field) {
     var renderOutPut = <div>alohoiii1</div>;
 
@@ -90,6 +102,7 @@ export default class FormsPanel extends React.Component {
               className="form-control"
               id={field.name}
               placeholder="Example input"
+              onChange={() => this.handleChange()}
             />
           </div>
         );
@@ -108,7 +121,7 @@ export default class FormsPanel extends React.Component {
     return renderOutPut;
   }
 
-  drawFormBody(form, fts) {
+  drawFormBody(form, fieldTySwitch) {
     console.log('this is this.drawFormBody');
     console.log('form to draw : ', form);
     console.log('and this : ', this);
@@ -122,7 +135,7 @@ export default class FormsPanel extends React.Component {
           {form.fields.map((field) => (
             <div className="form-group">
               <label htmlFor={field.name}>{field.title}</label>
-              {fts(field)}
+              {fieldTySwitch(field)}
               {/* {fieldTypeSwitch(field)} */}
             </div>
           ))}
