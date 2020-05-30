@@ -24,6 +24,7 @@ export default class FormsPanel extends React.Component {
     // this.drawFormBody = this.drawFormBody(this);
     this.handleChange = this.handleChange.bind(this);
     this.fieldTypeSwitch = this.fieldTypeSwitch.bind(this);
+    this.optionSwitch = this.optionSwitch.bind(this);
   }
 
   componentDidMount() {
@@ -81,8 +82,10 @@ export default class FormsPanel extends React.Component {
 
   handleChange(formId, fieldName, value) {
     console.log(
+      'this is handle change',
       'handleChange',
       'formId, fieldName, value',
+      'fieldType',
       formId,
       fieldName,
       value
@@ -96,7 +99,15 @@ export default class FormsPanel extends React.Component {
         ourForm = form;
         form.fields.map((field) => {
           if (field.name === fieldName) {
-            field.value = value;
+            if (field.type === 'Location') {
+              var coords = {};
+              coords.lat = value.lat;
+              coords.long = value.long;
+              field.value = coords;
+              // field.value = { lat: value.lat, long: value.long };
+            } else {
+              field.value = value;
+            }
           }
         });
       }
@@ -120,9 +131,10 @@ export default class FormsPanel extends React.Component {
               this.handleChange(formId, field.name, e.target.value)
             }
           >
-            {field.options.map((option) => (
-              <option value={option.value}>{option.label}</option>
-            ))}
+            {field.options.map((option) =>
+              // <option value={option.value}>{option.label}</option>
+              this.optionSwitch(field, option)
+            )}
           </select>
         </div>
       );
@@ -177,6 +189,17 @@ export default class FormsPanel extends React.Component {
     }
 
     return renderOutPut;
+  }
+
+  optionSwitch(field, option) {
+    console.log('that loc opt type : ', field.type, option, selectedLoc);
+    if (field.type != 'Location') {
+      return <option value={option.value}>{option.label}</option>;
+    } else {
+      var selectedLoc = option.value;
+      console.log('that loc opt : ', selectedLoc);
+      return <option value={option.value}>{option.label}</option>;
+    }
   }
 
   drawFormBody(form, fieldTySwitch) {
