@@ -96,14 +96,14 @@ export default class FormsPanel extends React.Component {
 
             {items.map((item) => (
               <div className="form-group">
-                <form>
+                <form id={item.id}>
                   <h3>{item.title}</h3>
-                </form>
-                {item.fields.map((field) => (
-                  <div className="form-group">
-                    <label htmlFor={field.name}>{field.title}</label>
-                    {fieldTypeSwitch(field)}
-                    {/* {switch(field.type) {
+                  {/* </form> */}
+                  {item.fields.map((field) => (
+                    <div className="form-group">
+                      <label htmlFor={field.name}>{field.title}</label>
+                      {fieldTypeSwitch(field)}
+                      {/* {switch(field.type) {
                         case "Text":
                             
                             break;
@@ -111,8 +111,10 @@ export default class FormsPanel extends React.Component {
                         default:
                             break;
                     }} */}
-                  </div>
-                ))}
+                    </div>
+                  ))}
+                </form>
+                <input type="submit" value="Submit" />
               </div>
             ))}
           </div>
