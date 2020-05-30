@@ -89,7 +89,7 @@ export default class FormsPanel extends React.Component {
     );
   }
 
-  fieldTypeSwitch(field) {
+  fieldTypeSwitch(formId, field) {
     var renderOutPut = <div>alohoiii1</div>;
 
     switch (field.type) {
@@ -102,7 +102,9 @@ export default class FormsPanel extends React.Component {
               className="form-control"
               id={field.name}
               placeholder="Example input"
-              onChange={() => this.handleChange()}
+              onChange={(e) =>
+                this.handleChange(formId, field.name, e.target.value)
+              }
             />
           </div>
         );
@@ -135,7 +137,7 @@ export default class FormsPanel extends React.Component {
           {form.fields.map((field) => (
             <div className="form-group">
               <label htmlFor={field.name}>{field.title}</label>
-              {fieldTySwitch(field)}
+              {fieldTySwitch(form.id, field)}
               {/* {fieldTypeSwitch(field)} */}
             </div>
           ))}
