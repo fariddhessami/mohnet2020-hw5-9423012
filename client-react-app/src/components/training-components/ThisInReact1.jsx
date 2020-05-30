@@ -9,9 +9,10 @@ class ThisInReact1 extends Component {
   }
   handleClick() {
     console.log('From handleClick()', this);
-    console.log(this.state.numOfClicks);
-    this.state.numOfClicks = this.state.numOfClicks + 1;
-    console.log(this.state.numOfClicks);
+    // console.log(this.state.numOfClicks);
+    // this.state.numOfClicks = this.state.numOfClicks + 1;
+    // console.log(this.state.numOfClicks);
+    this.setState({ numOfClicks: this.state.numOfClicks + 1 });
   }
   render() {
     console.log('From render()', this);
