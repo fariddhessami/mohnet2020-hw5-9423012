@@ -56,5 +56,22 @@
                 "required": true
             }
         ]
+    },
+    {
+        "title": "A weapon form",
+        "id": "1235",
+        "fields": [{
+                "name": "Weapon_Model",
+                "title": "Weapon Model",
+                "type": "Text",
+                "required": true
+            },
+            {
+                "name": "Weapon_Manufacturer",
+                "title": "Weapon Manufacturer",
+                "type": "Text",
+                "required": true
+            }
+        ]
     }
 ]

@@ -8,6 +8,8 @@ import DatePickerFaridy from './DatePickerFaridy';
 import LocationPickerFaridy from './LocationPickerFaridy';
 import LocationPickerFaridy2 from './LocationPickerFaridy2';
 
+import ThisInReact1 from './training-components/ThisInReact1';
+
 export default class FormsPanel extends React.Component {
   constructor(props) {
     super(props);
@@ -89,6 +91,8 @@ export default class FormsPanel extends React.Component {
             <p>hello this is forms BTW</p>
 
             {/* <LocationPickerFaridy2 /> */}
+
+            <ThisInReact1 />
 
             {items.map((item) => (
               <div className="form-group">
