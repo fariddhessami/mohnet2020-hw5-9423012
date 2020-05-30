@@ -31,10 +31,10 @@ export default class FormsPanel extends React.Component {
           items: result.data,
           forms: result.data,
         });
-        console.log('formsP : result : ');
-        console.log(result);
-        console.log(result.data);
-        console.log('this.state.items', this.state.items);
+        // console.log('formsP : result : ');
+        // console.log(result);
+        // console.log(result.data);
+        // console.log('this.state.items', this.state.items);
         this.state.forms.forEach((form) => {
           form.isVisiable = false;
         });
@@ -108,16 +108,46 @@ export default class FormsPanel extends React.Component {
   }
 
   drawFormBody(form) {
+    // const fieldTypeSwitch = this.fieldTypeSwitch;
+
+    console.log('this is this.drawFormBody');
     console.log('form to draw : ', form);
 
-    if (form.isVisiable) {
+    if (!form.isVisiable) {
       return <div>alou11111</div>;
     } else {
-      return <div>alou77777</div>;
+      return (
+        <div>
+          alou77777
+          {form.fields.map((field) => (
+            <div className="form-group">
+              <label htmlFor={field.name}>{field.title}</label>
+              {/* {fieldTypeSwitch(field)} */}
+            </div>
+          ))}
+          <input type="submit" value="Submit" />
+        </div>
+        // {item.fields.map((field) => (
+        //   <div className="form-group">
+        //     <label htmlFor={field.name}>{field.title}</label>
+        //     {fieldTypeSwitch(field)}
+        //     {/* {switch(field.type) {
+        //       case "Text":
+
+        //           break;
+
+        //       default:
+        //           break;
+        //   }} */}
+        //   </div>
+        // ))}
+      );
     }
   }
 
   render() {
+    console.log('this is render() : ', this);
+    // console.log('this is this.drawFormBody : ', this.drawFormBody);
     const drawFormBody = this.drawFormBody;
     const fieldTypeSwitch = this.fieldTypeSwitch;
     const { error, isLoaded, items } = this.state;
@@ -149,25 +179,13 @@ export default class FormsPanel extends React.Component {
                   {if(form.isVisiable){
                    return <div></div> 
                   }} */}
-
+                  {() => console.log('hello there!')}
+                  {() => this.drawFormBody(item)}
                   {drawFormBody(item)}
-
-                  {item.fields.map((field) => (
-                    <div className="form-group">
-                      <label htmlFor={field.name}>{field.title}</label>
-                      {fieldTypeSwitch(field)}
-                      {/* {switch(field.type) {
-                        case "Text":
-                            
-                            break;
-                    
-                        default:
-                            break;
-                    }} */}
-                    </div>
-                  ))}
+                  123456
+                  {/* {this.drawFormBody(item)} */}
+                  {/* {drawFormBody(item)} */}
                 </form>
-                <input type="submit" value="Submit" />
               </div>
             ))}
           </div>
