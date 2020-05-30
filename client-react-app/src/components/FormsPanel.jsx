@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import DatePickerFaridy from './DatePickerFaridy';
 import LocationPickerFaridy from './LocationPickerFaridy';
 import LocationPickerFaridy2 from './LocationPickerFaridy2';
+import LocationPickerFaridy3 from './LocationPickerFaridy3';
 
 import ThisInReact1 from './training-components/ThisInReact1';
 
@@ -149,6 +150,7 @@ export default class FormsPanel extends React.Component {
             <p>hello this is forms BTW</p>
 
             {/* <LocationPickerFaridy2 /> */}
+            <LocationPickerFaridy3 />
 
             <ThisInReact1 />
 
