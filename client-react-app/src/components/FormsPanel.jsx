@@ -107,11 +107,12 @@ export default class FormsPanel extends React.Component {
     return renderOutPut;
   }
 
-  drawFormBody(form) {
+  drawFormBody(form, fts) {
     // const fieldTypeSwitch = this.fieldTypeSwitch;
 
     console.log('this is this.drawFormBody');
     console.log('form to draw : ', form);
+    console.log('and this : ', this);
 
     if (!form.isVisiable) {
       return <div>alou11111</div>;
@@ -122,6 +123,7 @@ export default class FormsPanel extends React.Component {
           {form.fields.map((field) => (
             <div className="form-group">
               <label htmlFor={field.name}>{field.title}</label>
+              {fts(field)}
               {/* {fieldTypeSwitch(field)} */}
             </div>
           ))}
@@ -179,10 +181,11 @@ export default class FormsPanel extends React.Component {
                   {if(form.isVisiable){
                    return <div></div> 
                   }} */}
-                  {() => console.log('hello there!')}
-                  {() => this.drawFormBody(item)}
-                  {drawFormBody(item)}
+                  {/* {() => console.log('hello there!')}
+                  {() => this.drawFormBody(item)} */}
+                  {/* {drawFormBody(item)} */}
                   123456
+                  {this.drawFormBody(item, fieldTypeSwitch)}
                   {/* {this.drawFormBody(item)} */}
                   {/* {drawFormBody(item)} */}
                 </form>
