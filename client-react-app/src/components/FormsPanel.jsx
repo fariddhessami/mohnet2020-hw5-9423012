@@ -232,6 +232,10 @@ export default class FormsPanel extends React.Component {
             </div>
           );
           break;
+
+        case 'Location':
+          renderOutPut = <LocationPickerFaridy5 className="form-group" />;
+          break;
         default:
           break;
       }
@@ -297,7 +301,6 @@ export default class FormsPanel extends React.Component {
 
             {/* <LocationPickerFaridy2 /> */}
             {/* <LocationPickerFaridy3 /> */}
-            <LocationPickerFaridy5 />
 
             <ThisInReact1 />
 
@@ -329,6 +332,8 @@ export default class FormsPanel extends React.Component {
                 </form>
               </div>
             ))}
+
+            <LocationPickerFaridy5 className="form-group" />
           </div>
         </div>
       );
