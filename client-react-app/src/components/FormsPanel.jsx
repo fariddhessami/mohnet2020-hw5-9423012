@@ -25,10 +25,11 @@ export default class FormsPanel extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.fieldTypeSwitch = this.fieldTypeSwitch.bind(this);
     this.optionSwitch = this.optionSwitch.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
-    Axios.get('api/forms-test').then(
+    Axios.get('api/forms').then(
       (result) => {
         this.setState({
           isLoaded: true,
@@ -96,14 +97,20 @@ export default class FormsPanel extends React.Component {
         form.fields.map((field) => {
           if (field.name === fieldName) {
             if (field.type === 'Location') {
-              var coords = {};
-              coords.lat = value.lat;
-              coords.long = value.long;
-              // coords = value.long;
-              field.value = coords;
-              console.log('location value coords', coords);
+              // var coords = {};
+              // coords.lat = value.lat;
+              // coords.long = value.long;
+              // // coords = value.long;
+
+              console.log('location value field', 'value', value);
+
+              if (typeof field.value == 'object') {
+                field.value = JSON.parse(value);
+              } else {
+                field.value = value;
+              }
+
               console.log('location value field.value', field.value);
-              // field.value = { lat: value.lat, long: value.long };
             } else {
               field.value = value;
             }
@@ -114,6 +121,10 @@ export default class FormsPanel extends React.Component {
     console.log(ourForm);
     this.setState(state3);
     console.log('this is new state :', state3);
+  }
+
+  handleSelect(e) {
+    console.log('on select called!!!!');
   }
 
   fieldTypeSwitch(formId, field) {
@@ -139,7 +150,9 @@ export default class FormsPanel extends React.Component {
             onChange={(e) =>
               this.handleChange(formId, field.name, e.target.value)
             }
+            onSelect={(e) => this.handleSelect(e)}
           >
+            <option value="">select an option</option>
             {field.options.map((option) =>
               // <option value={option.value}>{option.label}</option>
               this.optionSwitch(field, option)
@@ -212,7 +225,6 @@ export default class FormsPanel extends React.Component {
       return (
         <option value={JSON.stringify(option.value)}>{option.label}</option>
       );
-      // JSON.stringify(option)
     }
   }
 

@@ -14,6 +14,19 @@ expressServer.get('/api/forms-test', (req, res) => {
     console.log('server recieved a test-data request');
 });
 
+expressServer.get('/api/forms/', (req, res) => {
+    res.send(forDes_Data);
+    console.log('server recieved a data request');
+});
+
+expressServer.get('/api/forms/:formid', (req, res) => {
+    let formid = req.params.formid;
+
+    console.log('server recieved a single form request id : ', formid);
+
+    // res.send((forDes_Data));
+});
+
 expressServer.put('/gis/addpolygon', function(req, res) {
     // var jSonSTring = JSON.stringify(req.body);
     // var respObj = JSON.parse(jSonSTring);
