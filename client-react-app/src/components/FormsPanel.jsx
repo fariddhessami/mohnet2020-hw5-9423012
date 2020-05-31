@@ -8,6 +8,7 @@ import DatePickerFaridy from './DatePickerFaridy';
 import LocationPickerFaridy from './LocationPickerFaridy';
 import LocationPickerFaridy2 from './LocationPickerFaridy2';
 import LocationPickerFaridy3 from './LocationPickerFaridy3';
+import LocationPickerFaridy5 from './LocationPickerFaridy5';
 
 import ThisInReact1 from './training-components/ThisInReact1';
 
@@ -296,6 +297,7 @@ export default class FormsPanel extends React.Component {
 
             {/* <LocationPickerFaridy2 /> */}
             {/* <LocationPickerFaridy3 /> */}
+            {/* <LocationPickerFaridy5 /> */}
 
             <ThisInReact1 />
 
