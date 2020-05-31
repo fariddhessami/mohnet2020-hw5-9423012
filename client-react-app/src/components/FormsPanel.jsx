@@ -297,7 +297,7 @@ export default class FormsPanel extends React.Component {
 
             {/* <LocationPickerFaridy2 /> */}
             {/* <LocationPickerFaridy3 /> */}
-            {/* <LocationPickerFaridy5 /> */}
+            <LocationPickerFaridy5 />
 
             <ThisInReact1 />
 
