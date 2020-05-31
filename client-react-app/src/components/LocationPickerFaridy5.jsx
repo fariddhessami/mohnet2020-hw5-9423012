@@ -18,17 +18,31 @@ const divStyle = {
 };
 
 export class LocationPickerFaridy5 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDrag = this.handleDrag.bind(this);
+  }
+
+  handleDrag() {
+    console.log('salam google');
+  }
+
   render() {
     return (
       <div style={divStyle}>
-        alo this is map alo alo
         <Map
           className="form-group"
           containerStyle={containerStyle}
+          style={{ width: '100%', height: '100%', position: 'relative' }}
           google={this.props.google}
           zoom={14}
         >
-          <Marker onClick={this.onMarkerClick} name={'Current location'} />
+          <Marker
+            draggable={true}
+            onClick={this.onMarkerClick}
+            name={'Current location'}
+            onDragend={this.handleDrag}
+          />
 
           <InfoWindow onClose={this.onInfoWindowClose}>
             <div>{/* <h1>{this.state.selectedPlace.name}</h1> */}</div>
