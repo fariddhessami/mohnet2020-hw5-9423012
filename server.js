@@ -4,6 +4,9 @@ const expressServer = express();
 
 const PORT = 5000;
 
+expressServer.use(express.json());
+//for reading json in a request's input body
+
 expressServer.use(require('./src/routes/routes.js'));
 
 var forDes_Data = require('./src/dataFiles/testData.json');
@@ -27,16 +30,35 @@ expressServer.get('/api/forms/:formid', (req, res) => {
     // res.send((forDes_Data));
 });
 
-expressServer.put('/gis/addpolygon', function(req, res) {
-    // var jSonSTring = JSON.stringify(req.body);
-    // var respObj = JSON.parse(jSonSTring);
+expressServer.put('/api/submitform', function(req, res) {
 
-    // var coords = respObj.geometry.coordinates;
-    // var name = respObj.properties.name;
+    console.log(`a form is submited to the server : ${JSON.stringify(req.body)}`);
+    console.log(`a form is submited to the server : ${req}`);
+    console.log(`a form is submited to the server : ${req.body}`);
 
-    // add_name_polygons_toData(name, coords, data_array);
-    // res.send(`your polygon named : ${name} has been added !`);
+    var jSonSTring = JSON.stringify(req.body);
+    console.log(`a form is submited to the server : ${jSonSTring}`);
+    res.send('alo');
+    console.log(jSonSTring);
+    console.log('req', req);
+    console.log('req.body', req.body);
+
 });
+
+expressServer.post('/api/submitform', function(req, res) {
+
+    console.log(`a form is submited to the server : ${JSON.stringify(req.body)}`);
+    console.log(`a form is submited to the server : ${req}`);
+    console.log(`a form is submited to the server : ${req.body}`);
+
+    var jSonSTring = JSON.stringify(req.body);
+    console.log(`a form is submited to the server : ${jSonSTring}`);
+    res.send('alo');
+    console.log(jSonSTring);
+    console.log('req', req);
+    console.log('req.body', req.body);
+});
+
 
 
 expressServer.listen(PORT, () =>

@@ -70,9 +70,23 @@ export default class FormsPanel extends React.Component {
     this.setState(state2);
   }
 
-  handleSubmit(e) {
+  handleSubmit(e, formID) {
     e.preventDefault();
-    alert('salam Haji!');
+    alert(`salam Haji! ${formID}`, formID);
+
+    // axios.post('/login', {
+    //   firstName: 'Finn',
+    //   lastName: 'Williams',
+    // });
+
+    console.log('on submit this', this);
+    console.log('on submit this', this.state.forms);
+
+    // Axios.put('/api/submitform', JSON.stringify(this.state.forms));
+    // // .then({})
+    // Axios.put('/api/submitform', { alo: 'salam' });
+    // Axios.post('/api/submitform', { alo: 'salam' });
+    Axios.put('/api/submitform', JSON.stringify(this.state.forms));
   }
 
   toggleFormVis(selectedID) {
@@ -279,18 +293,18 @@ export default class FormsPanel extends React.Component {
 
             <ThisInReact1 />
 
-            {items.map((item, indexAsKey) => (
+            {items.map((form, indexAsKey) => (
               <div className="form-group" key={indexAsKey}>
                 <form
-                  id={item.id}
+                  id={form.id}
                   key={indexAsKey}
-                  onSubmit={this.handleSubmit}
+                  onSubmit={(e) => this.handleSubmit(e, form.id)}
                 >
                   <h3
-                    onClick={() => this.handleClick(item.id)}
+                    onClick={() => this.handleClick(form.id)}
                     key={indexAsKey}
                   >
-                    {item.title}
+                    {form.title}
                   </h3>
                   {/* <h3 onClick={() => this.handleClick(id)}>{item.title}</h3> */}
                   {/* </form> */}
@@ -301,7 +315,7 @@ export default class FormsPanel extends React.Component {
                   {/* {() => console.log('hello there!')}
                   {() => this.drawFormBody(item)} */}
                   {/* {drawFormBody(item)} */}
-                  {this.drawFormBody(item, fieldTypeSwitch)}
+                  {this.drawFormBody(form, fieldTypeSwitch)}
                   {/* {this.drawFormBody(item)} */}
                   {/* {drawFormBody(item)} */}
                 </form>
