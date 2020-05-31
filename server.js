@@ -14,6 +14,18 @@ expressServer.get('/api/forms-test', (req, res) => {
     console.log('server recieved a test-data request');
 });
 
+expressServer.put('/gis/addpolygon', function(req, res) {
+    // var jSonSTring = JSON.stringify(req.body);
+    // var respObj = JSON.parse(jSonSTring);
+
+    // var coords = respObj.geometry.coordinates;
+    // var name = respObj.properties.name;
+
+    // add_name_polygons_toData(name, coords, data_array);
+    // res.send(`your polygon named : ${name} has been added !`);
+});
+
+
 expressServer.listen(PORT, () =>
     console.log(`express server is now listening on port ${PORT}`)
 );

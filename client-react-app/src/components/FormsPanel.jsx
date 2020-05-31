@@ -35,10 +35,6 @@ export default class FormsPanel extends React.Component {
           items: result.data,
           forms: result.data,
         });
-        // console.log('formsP : result : ');
-        // console.log(result);
-        // console.log(result.data);
-        // console.log('this.state.items', this.state.items);
         this.state.forms.forEach((form) => {
           form.isVisiable = false;
         });
@@ -61,16 +57,15 @@ export default class FormsPanel extends React.Component {
     console.log('click occured!!!!');
     console.log('this.state.forms', this.state.forms);
     console.log(selectedID);
-    this.setState();
+    // this.setState();
     var state2 = this.state;
     state2.forms.map((form) => (form.isVisiable = false));
     state2.forms.map((form) => {
-      console.log('form.id', form.id);
+      // console.log('form.id', form.id);
       if (form.id === selectedID) form.isVisiable = true;
     });
-    console.log('state2', state2);
+    console.log('state after click', state2);
     this.setState(state2);
-    console.log('this.state.forms', this.state.forms);
   }
 
   toggleFormVis(selectedID) {
@@ -85,10 +80,11 @@ export default class FormsPanel extends React.Component {
       'this is handle change',
       'handleChange',
       'formId, fieldName, value',
-      'fieldType',
+      '',
       formId,
       fieldName,
-      value
+      value,
+      typeof value
     );
     var state3 = this.state;
     console.log(state3);
@@ -103,7 +99,10 @@ export default class FormsPanel extends React.Component {
               var coords = {};
               coords.lat = value.lat;
               coords.long = value.long;
+              // coords = value.long;
               field.value = coords;
+              console.log('location value coords', coords);
+              console.log('location value field.value', field.value);
               // field.value = { lat: value.lat, long: value.long };
             } else {
               field.value = value;
@@ -118,11 +117,21 @@ export default class FormsPanel extends React.Component {
   }
 
   fieldTypeSwitch(formId, field) {
-    var renderOutPut = <div>alohoiii1</div>;
+    var renderOutPut = <div>unProgrammed field type</div>;
 
-    console.log('field to check :', field, field.options);
+    console.log(
+      'field to check :',
+      'field',
+      'field.options',
+      field,
+      field.options
+    );
 
     if (typeof field.options != 'undefined') {
+      if (field.type == 'Location') {
+        console.log('this is fieldTypeSwitch : ', 'field.type', field.type);
+      }
+
       renderOutPut = (
         <div>
           <select
@@ -197,8 +206,13 @@ export default class FormsPanel extends React.Component {
       return <option value={option.value}>{option.label}</option>;
     } else {
       var selectedLoc = option.value;
-      console.log('that loc opt : ', selectedLoc);
-      return <option value={option.value}>{option.label}</option>;
+      console.log('that loc opt : ', 'selectedLoc', selectedLoc);
+      console.log('that loc opt : ', 'typeof(selectedLoc)', typeof selectedLoc);
+      // return <option value={option.value}>{option.label}</option>;
+      return (
+        <option value={JSON.stringify(option.value)}>{option.label}</option>
+      );
+      // JSON.stringify(option)
     }
   }
 
@@ -247,10 +261,13 @@ export default class FormsPanel extends React.Component {
 
             <ThisInReact1 />
 
-            {items.map((item) => (
-              <div className="form-group">
-                <form id={item.id}>
-                  <h3 onClick={() => this.handleClick(item.id)}>
+            {items.map((item, indexAsKey) => (
+              <div className="form-group" key={indexAsKey}>
+                <form id={item.id} key={indexAsKey}>
+                  <h3
+                    onClick={() => this.handleClick(item.id)}
+                    key={indexAsKey}
+                  >
                     {item.title}
                   </h3>
                   {/* <h3 onClick={() => this.handleClick(id)}>{item.title}</h3> */}
