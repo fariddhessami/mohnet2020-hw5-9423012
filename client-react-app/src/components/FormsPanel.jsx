@@ -26,6 +26,7 @@ export default class FormsPanel extends React.Component {
     this.fieldTypeSwitch = this.fieldTypeSwitch.bind(this);
     this.optionSwitch = this.optionSwitch.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -67,6 +68,11 @@ export default class FormsPanel extends React.Component {
     });
     console.log('state after click', state2);
     this.setState(state2);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    alert('salam Haji!');
   }
 
   toggleFormVis(selectedID) {
@@ -275,7 +281,11 @@ export default class FormsPanel extends React.Component {
 
             {items.map((item, indexAsKey) => (
               <div className="form-group" key={indexAsKey}>
-                <form id={item.id} key={indexAsKey}>
+                <form
+                  id={item.id}
+                  key={indexAsKey}
+                  onSubmit={this.handleSubmit}
+                >
                   <h3
                     onClick={() => this.handleClick(item.id)}
                     key={indexAsKey}
