@@ -87,7 +87,12 @@ export default class FormsPanel extends React.Component {
     // Axios.put('/api/submitform', { alo: 'salam' });
     // Axios.post('/api/submitform', { alo: 'salam' });
     // Axios.put('/api/submitform', JSON.stringify(this.state.forms));
-    Axios.put('/api/submitform', this.state.forms);
+    Axios.put(
+      '/api/submitform',
+      this.state.forms.map((form) => {
+        if (form.id == formID) return form;
+      })
+    );
   }
 
   toggleFormVis(selectedID) {

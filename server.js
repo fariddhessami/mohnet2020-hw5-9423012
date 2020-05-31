@@ -32,31 +32,32 @@ expressServer.get('/api/forms/:formid', (req, res) => {
 
 expressServer.put('/api/submitform', function(req, res) {
 
-    console.log(`a form is submited to the server : ${JSON.stringify(req.body)}`);
-    console.log(`a form is submited to the server : ${req}`);
+    // console.log(`a form is submited to the server : ${JSON.stringify(req.body)}`);
+    // console.log(`a form is submited to the server : ${req}`);
     console.log(`a form is submited to the server : ${req.body}`);
+    console.log(req.body);
 
-    var jSonSTring = JSON.stringify(req.body);
-    console.log(`a form is submited to the server : ${jSonSTring}`);
-    res.send('alo');
-    console.log(jSonSTring);
-    console.log('req', req);
-    console.log('req.body', req.body);
+    // var jSonSTring = JSON.stringify(req.body);
+    // console.log(`a form is submited to the server : ${jSonSTring}`);
+    // res.send('alo');
+    // console.log(jSonSTring);
+    // console.log('req', req);
+    // console.log('req.body', req.body);
 
 });
 
 expressServer.post('/api/submitform', function(req, res) {
 
-    console.log(`a form is submited to the server : ${JSON.stringify(req.body)}`);
-    console.log(`a form is submited to the server : ${req}`);
-    console.log(`a form is submited to the server : ${req.body}`);
+    // console.log(`a form is submited to the server : ${JSON.stringify(req.body)}`);
+    // console.log(`a form is submited to the server : ${req}`);
+    // console.log(`a form is submited to the server : ${req.body}`);
 
-    var jSonSTring = JSON.stringify(req.body);
-    console.log(`a form is submited to the server : ${jSonSTring}`);
-    res.send('alo');
-    console.log(jSonSTring);
-    console.log('req', req);
-    console.log('req.body', req.body);
+    // var jSonSTring = JSON.stringify(req.body);
+    // console.log(`a form is submited to the server : ${jSonSTring}`);
+    // res.send('alo');
+    // console.log(jSonSTring);
+    // console.log('req', req);
+    // console.log('req.body', req.body);
 });
 
 

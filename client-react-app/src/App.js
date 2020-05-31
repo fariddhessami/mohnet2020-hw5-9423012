@@ -17,6 +17,10 @@ export class App extends Component {
     todos: [],
   };
 
+  // componentDidMount() {
+  //   const KEY = secretKeyFile.key;
+  // }
+
   render() {
     return (
       <div className="App">
