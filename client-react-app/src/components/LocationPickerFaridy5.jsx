@@ -23,8 +23,9 @@ export class LocationPickerFaridy5 extends React.Component {
     this.handleDrag = this.handleDrag.bind(this);
   }
 
-  handleDrag() {
+  handleDrag(e) {
     console.log('salam google');
+    console.log(e);
   }
 
   render() {
@@ -41,7 +42,7 @@ export class LocationPickerFaridy5 extends React.Component {
             draggable={true}
             onClick={this.onMarkerClick}
             name={'Current location'}
-            onDragend={this.handleDrag}
+            onDragend={(e) => this.handleDrag(e)}
           />
 
           <InfoWindow onClose={this.onInfoWindowClose}>
