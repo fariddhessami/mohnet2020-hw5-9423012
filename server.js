@@ -34,8 +34,10 @@ expressServer.put('/api/submitform', function(req, res) {
 
     // console.log(`a form is submited to the server : ${JSON.stringify(req.body)}`);
     // console.log(`a form is submited to the server : ${req}`);
-    console.log(`a form is submited to the server : ${req.body}`);
+    console.log(`a form is submited to the server : this is the request's body :`);
     console.log(req.body);
+    console.log(JSON.stringify(req.body, null, 4));
+
 
     // var jSonSTring = JSON.stringify(req.body);
     // console.log(`a form is submited to the server : ${jSonSTring}`);

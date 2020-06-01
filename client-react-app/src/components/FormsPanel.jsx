@@ -88,12 +88,14 @@ export default class FormsPanel extends React.Component {
     // Axios.put('/api/submitform', { alo: 'salam' });
     // Axios.post('/api/submitform', { alo: 'salam' });
     // Axios.put('/api/submitform', JSON.stringify(this.state.forms));
-    Axios.put(
-      '/api/submitform',
-      this.state.forms.map((form) => {
-        if (form.id == formID) return form;
-      })
-    );
+
+    var desiredForm;
+
+    this.state.forms.map((form) => {
+      if (form.id === formID) desiredForm = form;
+    });
+
+    Axios.put('/api/submitform', desiredForm);
   }
 
   toggleFormVis(selectedID) {
@@ -131,19 +133,25 @@ export default class FormsPanel extends React.Component {
 
               console.log('location value field', 'value', value);
 
-              if (typeof field.value == 'object') {
-                console.log(
-                  'this is new state : (json gonna parse :) value',
-                  value
-                );
-                field.value = JSON.parse(value);
-              } else {
-                console.log(
-                  'this is new state : (json not! gonna parse :) value',
-                  value
-                );
-                field.value = value;
+              // if (typeof field.value == 'object') {
+              //   console.log(
+              //     'this is new state : (json gonna parse :) value',
+              //     value
+              //   );
+              //   field.value = JSON.parse(value);
+              // } else {
+
+              if (typeof value == 'string') {
+                value = JSON.parse(value);
               }
+
+              console.log(
+                'this is new state : (json not! gonna parse :) value',
+                value
+              );
+
+              field.value = value;
+              // }
 
               console.log('location value field.value', field.value);
             } else {
