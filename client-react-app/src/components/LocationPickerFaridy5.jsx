@@ -28,6 +28,12 @@ export class LocationPickerFaridy5 extends React.Component {
     console.log('salam google');
     console.log(e);
     console.log(this.mapMarkerRef.current);
+    console.log(this.mapMarkerRef);
+    // console.log(this.mapMarkerRef.getMarker());
+    console.log(this.mapMarkerRef.current.marker);
+    console.log(this.mapMarkerRef.current.marker.position);
+    console.log(this.mapMarkerRef.current.marker.position.lat());
+    console.log(this.mapMarkerRef.current.marker.position.lng());
   }
 
   render() {
