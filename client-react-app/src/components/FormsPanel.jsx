@@ -132,8 +132,16 @@ export default class FormsPanel extends React.Component {
               console.log('location value field', 'value', value);
 
               if (typeof field.value == 'object') {
+                console.log(
+                  'this is new state : (json gonna parse :) value',
+                  value
+                );
                 field.value = JSON.parse(value);
               } else {
+                console.log(
+                  'this is new state : (json not! gonna parse :) value',
+                  value
+                );
                 field.value = value;
               }
 
@@ -234,7 +242,14 @@ export default class FormsPanel extends React.Component {
           break;
 
         case 'Location':
-          renderOutPut = <LocationPickerFaridy5 className="form-group" />;
+          renderOutPut = (
+            <LocationPickerFaridy5
+              className="form-group"
+              myfunc={this.handleChange}
+              myformId={formId}
+              myfield={field}
+            />
+          );
           break;
         default:
           break;
@@ -332,8 +347,6 @@ export default class FormsPanel extends React.Component {
                 </form>
               </div>
             ))}
-
-            <LocationPickerFaridy5 className="form-group" />
           </div>
         </div>
       );

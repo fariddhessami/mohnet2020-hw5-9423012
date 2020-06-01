@@ -34,7 +34,25 @@ export class LocationPickerFaridy5 extends React.Component {
     console.log(this.mapMarkerRef.current.marker.position);
     console.log(this.mapMarkerRef.current.marker.position.lat());
     console.log(this.mapMarkerRef.current.marker.position.lng());
+
+    console.log('I`m gonna call myfunc');
+
+    var selectedLoc = {
+      lat: this.mapMarkerRef.current.marker.position.lat().toString(),
+      long: this.mapMarkerRef.current.marker.position.lng().toString(),
+    };
+
+    this.props.myfunc(
+      this.props.myformId,
+      this.props.myfield.name,
+      selectedLoc
+    );
   }
+
+  //handleChange(formId, fieldName, value)
+  // myfunc={this.handleChange}
+  // myformId={formId}
+  // myfield={field}
 
   render() {
     return (
