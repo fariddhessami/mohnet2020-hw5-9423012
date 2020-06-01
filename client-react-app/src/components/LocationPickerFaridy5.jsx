@@ -63,12 +63,14 @@ export class LocationPickerFaridy5 extends React.Component {
           style={{ width: '100%', height: '100%', position: 'relative' }}
           google={this.props.google}
           zoom={14}
+          onReady={(e) => this.handleDrag(e)}
         >
           <Marker
             draggable={true}
             onClick={this.onMarkerClick}
             name={'Current location'}
             onDragend={(e) => this.handleDrag(e)}
+            onReady={(e) => this.handleDrag(e)}
             ref={this.mapMarkerRef}
           />
           <InfoWindow onClose={this.onInfoWindowClose}>
