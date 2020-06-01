@@ -27,6 +27,7 @@ export class LocationPickerFaridy5 extends React.Component {
   handleDrag(e) {
     console.log('salam google');
     console.log(e);
+    console.log(this.mapMarkerRef.current);
   }
 
   render() {
@@ -44,6 +45,7 @@ export class LocationPickerFaridy5 extends React.Component {
             onClick={this.onMarkerClick}
             name={'Current location'}
             onDragend={(e) => this.handleDrag(e)}
+            ref={this.mapMarkerRef}
           />
           <InfoWindow onClose={this.onInfoWindowClose}>
             <div>{/* <h1>{this.state.selectedPlace.name}</h1> */}</div>
