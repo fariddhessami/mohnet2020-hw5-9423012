@@ -21,6 +21,7 @@ export class LocationPickerFaridy5 extends React.Component {
   constructor(props) {
     super(props);
     this.handleDrag = this.handleDrag.bind(this);
+    this.mapMarkerRef = React.createRef();
   }
 
   handleDrag(e) {
@@ -44,11 +45,9 @@ export class LocationPickerFaridy5 extends React.Component {
             name={'Current location'}
             onDragend={(e) => this.handleDrag(e)}
           />
-
           <InfoWindow onClose={this.onInfoWindowClose}>
             <div>{/* <h1>{this.state.selectedPlace.name}</h1> */}</div>
           </InfoWindow>
-          {/*  */}
         </Map>
       </div>
     );
