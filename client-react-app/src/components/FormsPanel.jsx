@@ -12,6 +12,8 @@ import LocationPickerFaridy5 from './LocationPickerFaridy5';
 
 import ThisInReact1 from './training-components/ThisInReact1';
 
+import { Textbox } from 'react-inputs-validation';
+
 export default class FormsPanel extends React.Component {
   constructor(props) {
     super(props);
@@ -355,7 +357,63 @@ export default class FormsPanel extends React.Component {
                 </form>
               </div>
             ))}
-          </div>
+
+            {/* <div className="form-group">
+              <Textbox
+                id={'Name'} //Optional.[String].Default: "".  Input ID.
+                name="Name" //Optional.[String].Default: "". Input name.
+                type="text" //Optional.[String].Default: "text". Input type [text, password, number].
+                classNameInput="form-control"
+                classNameWrapper=""
+                classNameContainer=""
+                onBlur={(e) => {
+                  console.log('this is on blure e : ', e);
+                  console.log(e);
+                  //Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function,
+                  // even if it is an empty function. Missing this, the validation on blur will not work.
+                }}
+                validationOption={{
+                  name: 'givenName', //Optional.[String].Default: "". To display in the Error message. i.e Please enter your ${name}.
+                  check: true, //Optional.[Bool].Default: true. To determin if you need to validate.
+                  required: true, //Optional.[Bool].Default: true. To determin if it is a required field.
+                }}
+              />
+              <Textbox
+                id={'Name'} //Optional.[String].Default: "".  Input ID.
+                name="Name" //Optional.[String].Default: "". Input name.
+                type="text" //Optional.[String].Default: "text". Input type [text, password, number].
+                classNameInput="form-control"
+                classNameWrapper=""
+                classNameContainer=""
+                onBlur={(e) => {
+                  console.log('this is on blure e : ', e);
+                  console.log(e);
+                  //Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function,
+                  // even if it is an empty function. Missing this, the validation on blur will not work.
+                }}
+                validate={true} //Optional.[Bool].Default: false. If you have a submit button and trying to validate all the inputs of your form at once, toggle it to true, then it will validate the field and pass the result via the "validationCallback" you provide.
+                validationCallback={(res) =>
+                  this.setState({ hasNameError12: res, validate12: false })
+                }
+                // //Optional.[Func].Default: none. Return the validation result.
+                validationOption={{
+                  name: 'givenName', //Optional.[String].Default: "". To display in the Error message. i.e Please enter your ${name}.
+                  check: true, //Optional.[Bool].Default: true. To determin if you need to validate.
+                  required: true, //Optional.[Bool].Default: true. To determin if it is a required field.
+                }}
+              />
+            </div>
+            {/* <input
+              type="text"
+              className="form-control"
+              id={field.name}
+              placeholder="Example input"
+              onChange={(e) =>
+                this.handleChange(formId, field.name, e.target.value)
+              }
+            /> */}
+          </div>{' '}
+          */}
         </div>
       );
     }

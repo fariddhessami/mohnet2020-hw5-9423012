@@ -44,7 +44,7 @@ export class App extends Component {
             Learn React
           </a>
         </header>
-        <FaridyFakeDB />
+        {/* <FaridyFakeDB /> */}
         {/* <FetcherComponent />
         <AxiosComponent1 /> */}
         {/* ehem
